@@ -48,42 +48,6 @@ function FormValidation() {
 
 
   return (
-    // <form onSubmit={handleSubmit(onSubmit)}>
-    //   <div className="subForm">
-
-    //   <input
-    //     type="text"
-    //     placeholder="Enter username"
-    //     {...register("username")}
-    //     />
-    //   {errors.username && (
-    //       <span style={{ color: "red" }}>{errors.username.message}</span>
-    //     )}
-    //     </div>
-    //     <div className="subForm">
-    //   <input
-    //     type="text"
-    //     placeholder="Enter your Email"
-    //     {...register("mailAddress")}
-    //   />
-      
-    //   {errors.mailAddress && (
-    //     <span style={{ color: "red" }}>{errors.mailAddress.message}</span>
-    //   )}
-    //     </div>
-
-    //   <div className="subForm">
-    //   <input
-    //     type="password"
-    //     placeholder="Enter password"
-    //     {...register("password")}
-    //   />
-    //   {errors.password && (
-    //     <span style={{ color: "red" }}>{errors.password.message}</span>
-    //   )}
-    //     </div>
-    //  <button className="gradientButton" type="submit">Submit</button>
-    // </form>
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="subForm">
         <input
