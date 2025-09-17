@@ -1,11 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* -----------------------------------
+Universal Styling---------------------
+--------------------------------------
+*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+
+}
+
 body{
   margin: 0px;
   background-color: #060606;
+  font-family: inherit;
+  height: 100vh;
+  padding: 0 2rem;
+  color: white;
+}
+
+.loginContent{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
   height: 100vh;
 }
 
@@ -19,8 +42,7 @@ form{
   border: 1px solid rgba(128, 128, 128, 0.479);
   border-radius: .5rem;
   gap: 1rem;
-  font-family: 'Jost';
-  height: 250px;
+  height: 450px;
   position: relative;
 }
 
@@ -49,7 +71,7 @@ span{
   padding: 0 .5rem;
 }
 
-button{
+.gradientButton{
   font-size: 1rem;
   padding: 0.5rem 3rem;
   border-radius: .5rem;
@@ -63,10 +85,130 @@ button{
   width: 92.5%;
 }
 
-button:hover{
+form .gradientButton:hover{
   /* opacity: 85%; */
   /* box-shadow: 1px 1px 50px 1px  gray; */
-  background: linear-gradient(90deg, hsla(5, 90%, 24%, 1) 0%, hsla(296, 100%, 6%, 1) 100%);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.562);
+}
 
-    box-shadow: 0px 3px 8px gray;
+.userList{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  font-family: 'Jost', sans-serif;
+  padding: 2rem 0;
+}
+
+.user{
+  width: 400px;
+  border: 1px solid rgba(128, 128, 128, 0.227);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  background-color: rgba(42, 44, 42, 0.274);
+  transition: all 0.4s ease-in-out;
+  position: relative; /* needed for pseudo-element */
+  overflow: hidden; /* hide shine outside */
+  transition: transform 0.4s ease-in-out;
+  z-index: 2;
+}
+.user:hover {
+  background-color: rgba(42, 44, 42, 0.36);
+  transform: scale(1.03);
+}
+
+/* shine effect */
+.user::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -170%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.099) 50%,
+    transparent 100%
+  );
+  transform: skew(-25deg);
+  transition: all 1s ease;
+}
+
+.user:hover::before {
+  left: 150%;
+}
+
+.userIntro{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userIntro img{
+  border-radius: 50%;
+  position: relative;
+}
+
+
+.userIntro h3{
+  font-weight: 400;
+    background: linear-gradient(to left, #24e3d9, #7303c0, #ec38bc, #fdeff9);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-position: right;
+}
+.user .gradientButton{
+  position: initial;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+}
+
+.user .gradientButton:hover{
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.562);
+  transition: all 0.4s ease-in-out;
+}
+
+.loader{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+  margin: 0;
+  padding:2rem 0;
+}
+
+h1 > span{
+  font-size: 2rem;
+  animation: heartbeat 1.3s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

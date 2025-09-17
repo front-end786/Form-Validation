@@ -1,15 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import HomePage from "./pages/Home.jsx";
+import UserData from "./pages/User.jsx";
 import './App.css'
-import FromValidation from './components/Form'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <FromValidation/>
-  )
-}
-
-export default App
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <div className="mainBody">
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/users" element={<UserData/>}/>
+          <Route path="*" element={<h1>404 Page not Found</h1>}/>
+        </Routes>
+      </Router>
+    </div>
+  </React.StrictMode>
+);
